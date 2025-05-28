@@ -1,0 +1,149 @@
+-- Q1. Who are our top 10 customers by spend?
+
+SELECT
+	RANK() OVER (ORDER BY total_spend DESC) AS customer_rank,
+    customer_id,
+    total_spend
+FROM
+	(SELECT
+		t.customer_id,
+		SUM(t.quantity * p.price) AS total_spend
+	FROM
+		transactions t
+		LEFT JOIN products p ON t.product_id = p.product_id
+	GROUP BY
+		t.customer_id
+	LIMIT 10) AS customer_spend
+ORDER BY
+	customer_rank;
+
+-- Q2. Which product categories drive the most revenue?
+
+SELECT 
+    RANK() OVER (ORDER BY total_revenue DESC) AS category_rank,
+    category,
+    total_revenue
+FROM
+	(SELECT
+		p.category,
+		SUM(p.price * t.quantity) AS total_revenue
+	FROM 
+		products p
+	INNER JOIN
+		transactions t on p.product_id = t.product_id
+	GROUP BY
+		p.category) AS rev_by_category
+ORDER BY
+	category_rank;
+
+-- Q3. What’s the average transaction value by loyalty tier?
+
+SELECT 
+	c.loyalty_tier,
+    ROUND(AVG(tt.transaction_total),2) AS avg_transaction_value
+FROM
+	(SELECT
+		t.transaction_id,
+		t.customer_id,
+		SUM(t.quantity * p.price) AS transaction_total
+	FROM 
+		transactions t
+	INNER JOIN
+		products p ON p.product_id = t.product_id
+	GROUP BY
+		t.transaction_id,
+		t.customer_id
+	) AS tt
+INNER JOIN
+	customers c ON tt.customer_id = c.customer_id
+GROUP BY
+	c.loyalty_tier
+ORDER BY 
+	avg_transaction_value DESC;
+
+-- Q4. Which region has the highest number of transactions?
+
+SELECT
+	c.region,
+    COUNT(DISTINCT t.transaction_id) AS num_transactions,
+	ROUND(100.0 * COUNT(DISTINCT t.transaction_id) / 
+		(SELECT COUNT(DISTINCT transaction_id) FROM transactions), 1) AS percentage
+FROM 
+	transactions t
+INNER JOIN
+	customers c ON c.customer_id = t.customer_id
+GROUP BY 
+	c.region
+ORDER BY
+	num_transactions DESC;
+
+-- Q5. Which customers haven’t purchased in the last 30 days?
+-- NOTE: transaction date range for this fictitious dataset is 2024-01-01 to 2024-04-30
+
+SELECT 
+	c.customer_id,
+    c.region,
+    c.loyalty_tier,
+    MAX(t.transaction_date) AS last_purchase_date
+FROM
+	customers c
+LEFT JOIN
+	transactions t ON c.customer_id = t.customer_id
+GROUP BY
+	c.customer_id,
+    c.region,
+    c.loyalty_tier
+HAVING
+	MAX(t.transaction_date) < '2024-05-07' - INTERVAL 30 DAY
+    OR MAX(t.transaction_date) IS NULL
+ORDER BY 
+	last_purchase_date;
+
+-- Q6. What is the total revenue by loyalty tier per month?
+
+SELECT
+	c.loyalty_tier,
+	DATE_FORMAT(tx.transaction_month, '%Y-%b') AS transaction_month,
+    SUM(tx.transaction_total) AS tier_total
+FROM
+	(SELECT
+		t.transaction_id,
+		t.customer_id,
+        DATE_FORMAT(t.transaction_date, '%Y-%m-01') AS transaction_month,
+		SUM(t.quantity * p.price) AS transaction_total
+	FROM
+		transactions t
+	INNER JOIN
+		products p ON t.product_id = p.product_id
+	GROUP BY
+		t.transaction_id,
+		t.customer_id,
+        t.transaction_date) AS tx
+INNER JOIN
+	customers c ON c.customer_id = tx.customer_id
+GROUP BY
+	c.loyalty_tier,
+    tx.transaction_month
+ORDER BY
+	tx.transaction_month ASC;
+
+-- Q7. What is the ratio of one-time to repeat purchase customers?
+
+SELECT
+	CASE
+		WHEN transaction_count = 1 THEN 'One-Time'
+        ELSE 'Repeat'
+	END AS repeat_customer,
+    COUNT(*) AS customer_count,
+    ROUND(100.0 * COUNT(*) / SUM(COUNT(*)) OVER (), 2) AS percentage
+FROM
+	(SELECT 
+		customer_id,
+        COUNT(DISTINCT transaction_id) AS transaction_count
+	FROM
+		transactions
+	GROUP BY
+		customer_id) AS customer_transaction_counts
+GROUP BY
+	repeat_customer;
+
