@@ -20,7 +20,7 @@ This project uses SQL to analyse a fictional dataset of customer transactions, p
 7. What is the ratio of one-time to repeat purchase customers?
 
 #### How to View
-- SQL queries can be found in `retail_analysis_queries.sql`
+- SQL queries can be found in `retail_analysis_queries`
 - Dataset includes four CSV files: `customers`, `products`, `transactions`, and `loyalty_activity`
 
 #### Created by:
