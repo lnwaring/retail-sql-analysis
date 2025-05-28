@@ -1,0 +1,151 @@
+customer_id,sign_up_date,region,loyalty_tier
+C0001,2023-05-22,Scotland,Bronze
+C0002,2023-05-05,Midlands,Platinum
+C0003,2022-02-24,North West,Bronze
+C0004,2022-04-14,Midlands,Silver
+C0005,2022-02-01,Midlands,Bronze
+C0006,2023-05-20,South East,Bronze
+C0007,2022-02-05,North West,Bronze
+C0008,2023-08-10,North West,Bronze
+C0009,2023-04-01,North West,Silver
+C0010,2023-03-25,Midlands,Silver
+C0011,2023-01-08,Scotland,Silver
+C0012,2023-06-03,North West,Bronze
+C0013,2023-06-07,Midlands,Bronze
+C0014,2023-04-08,South East,Bronze
+C0015,2023-02-24,Scotland,Bronze
+C0016,2023-04-30,South East,Silver
+C0017,2022-06-10,Scotland,Silver
+C0018,2023-04-19,Midlands,Bronze
+C0019,2023-10-17,London,Bronze
+C0020,2023-02-06,Scotland,Bronze
+C0021,2022-04-30,South East,Silver
+C0022,2022-04-26,Midlands,Gold
+C0023,2022-06-17,Scotland,Bronze
+C0024,2022-03-17,London,Platinum
+C0025,2023-07-07,London,Bronze
+C0026,2022-05-25,North West,Platinum
+C0027,2022-04-20,North West,Silver
+C0028,2023-11-24,South East,Bronze
+C0029,2022-11-30,Scotland,Bronze
+C0030,2023-03-18,Scotland,Silver
+C0031,2023-10-23,North West,Silver
+C0032,2022-09-25,Scotland,Silver
+C0033,2023-04-23,Scotland,Silver
+C0034,2022-12-11,London,Silver
+C0035,2022-02-06,North West,Silver
+C0036,2023-01-29,Midlands,Bronze
+C0037,2022-11-05,North West,Bronze
+C0038,2023-09-30,Midlands,Bronze
+C0039,2023-01-18,London,Gold
+C0040,2023-12-29,South East,Silver
+C0041,2022-04-14,Scotland,Platinum
+C0042,2022-10-10,London,Bronze
+C0043,2022-01-23,Scotland,Gold
+C0044,2023-05-17,South East,Gold
+C0045,2023-05-21,South East,Bronze
+C0046,2022-02-11,London,Silver
+C0047,2022-09-16,South East,Silver
+C0048,2022-04-21,Midlands,Gold
+C0049,2022-08-03,South East,Bronze
+C0050,2022-05-07,Scotland,Bronze
+C0051,2023-08-22,Scotland,Gold
+C0052,2022-06-10,Scotland,Gold
+C0053,2022-04-25,Scotland,Bronze
+C0054,2022-04-19,Midlands,Bronze
+C0055,2022-06-19,North West,Platinum
+C0056,2022-08-30,London,Bronze
+C0057,2023-02-28,Scotland,Silver
+C0058,2022-11-29,South East,Gold
+C0059,2023-09-04,Scotland,Silver
+C0060,2022-03-09,South East,Gold
+C0061,2022-06-19,South East,Bronze
+C0062,2023-12-14,Scotland,Silver
+C0063,2023-08-03,Midlands,Silver
+C0064,2023-08-11,South East,Bronze
+C0065,2022-04-27,South East,Bronze
+C0066,2022-11-24,Scotland,Platinum
+C0067,2023-02-15,South East,Silver
+C0068,2023-09-10,South East,Bronze
+C0069,2022-09-18,Scotland,Platinum
+C0070,2022-02-25,Scotland,Platinum
+C0071,2023-04-01,London,Silver
+C0072,2023-11-22,Midlands,Gold
+C0073,2023-08-03,Midlands,Bronze
+C0074,2022-07-13,South East,Bronze
+C0075,2023-11-13,Midlands,Gold
+C0076,2022-01-30,South East,Gold
+C0077,2023-08-25,London,Gold
+C0078,2022-01-07,Scotland,Silver
+C0079,2022-08-08,Scotland,Gold
+C0080,2022-11-29,Scotland,Gold
+C0081,2022-05-25,Midlands,Platinum
+C0082,2023-07-12,London,Gold
+C0083,2023-02-08,Midlands,Silver
+C0084,2023-11-19,Midlands,Silver
+C0085,2023-10-29,London,Bronze
+C0086,2023-02-14,London,Platinum
+C0087,2023-02-25,London,Platinum
+C0088,2023-06-20,London,Bronze
+C0089,2022-01-20,Scotland,Bronze
+C0090,2023-11-17,North West,Silver
+C0091,2023-12-06,North West,Silver
+C0092,2023-01-22,London,Platinum
+C0093,2023-09-04,North West,Bronze
+C0094,2023-10-20,North West,Bronze
+C0095,2022-07-12,London,Silver
+C0096,2023-01-31,North West,Bronze
+C0097,2022-01-20,Midlands,Bronze
+C0098,2022-12-29,South East,Gold
+C0099,2023-11-23,South East,Gold
+C0100,2022-02-12,London,Bronze
+C0101,2022-09-16,Scotland,Silver
+C0102,2022-11-18,London,Silver
+C0103,2022-08-21,Scotland,Silver
+C0104,2022-12-07,South East,Bronze
+C0105,2022-10-18,London,Silver
+C0106,2023-10-30,Midlands,Platinum
+C0107,2023-06-14,North West,Silver
+C0108,2024-01-01,Scotland,Platinum
+C0109,2022-08-29,North West,Silver
+C0110,2022-10-09,North West,Bronze
+C0111,2022-09-27,London,Silver
+C0112,2022-04-02,North West,Silver
+C0113,2022-10-02,Midlands,Gold
+C0114,2023-06-19,North West,Bronze
+C0115,2023-03-09,London,Silver
+C0116,2023-12-11,Midlands,Silver
+C0117,2022-07-15,South East,Gold
+C0118,2023-09-11,North West,Bronze
+C0119,2022-12-17,London,Platinum
+C0120,2022-01-07,South East,Silver
+C0121,2022-09-10,South East,Bronze
+C0122,2022-11-19,Scotland,Gold
+C0123,2022-08-30,Midlands,Gold
+C0124,2023-11-13,North West,Platinum
+C0125,2023-05-27,London,Bronze
+C0126,2023-01-24,Scotland,Silver
+C0127,2022-03-14,Midlands,Silver
+C0128,2023-05-16,Scotland,Platinum
+C0129,2023-01-17,Midlands,Bronze
+C0130,2022-03-26,Midlands,Bronze
+C0131,2022-10-31,North West,Bronze
+C0132,2022-02-03,Midlands,Bronze
+C0133,2022-03-25,Scotland,Silver
+C0134,2023-07-11,Midlands,Bronze
+C0135,2022-08-12,North West,Bronze
+C0136,2023-04-13,North West,Gold
+C0137,2022-06-11,Scotland,Platinum
+C0138,2022-06-29,South East,Bronze
+C0139,2023-02-10,South East,Bronze
+C0140,2023-04-09,Midlands,Silver
+C0141,2023-11-29,London,Bronze
+C0142,2022-03-27,Midlands,Bronze
+C0143,2022-07-14,Scotland,Bronze
+C0144,2023-11-27,Scotland,Bronze
+C0145,2023-05-16,Scotland,Gold
+C0146,2023-06-24,Scotland,Bronze
+C0147,2022-07-14,Scotland,Gold
+C0148,2022-09-24,North West,Silver
+C0149,2022-03-25,South East,Bronze
+C0150,2023-12-11,Scotland,Silver
