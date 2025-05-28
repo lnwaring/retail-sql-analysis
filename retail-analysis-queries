@@ -1,4 +1,4 @@
--- Q1. Who are our top 10 customers by spend?
+-- Q1. Who are the top 10 customers by spend?
 
 SELECT
 	RANK() OVER (ORDER BY total_spend DESC) AS customer_rank,
@@ -16,6 +16,7 @@ FROM
 	LIMIT 10) AS customer_spend
 ORDER BY
 	customer_rank;
+
 
 -- Q2. Which product categories drive the most revenue?
 
@@ -35,6 +36,7 @@ FROM
 		p.category) AS rev_by_category
 ORDER BY
 	category_rank;
+
 
 -- Q3. What’s the average transaction value by loyalty tier?
 
@@ -61,6 +63,7 @@ GROUP BY
 ORDER BY 
 	avg_transaction_value DESC;
 
+
 -- Q4. Which region has the highest number of transactions?
 
 SELECT
@@ -77,8 +80,9 @@ GROUP BY
 ORDER BY
 	num_transactions DESC;
 
+
 -- Q5. Which customers haven’t purchased in the last 30 days?
--- NOTE: transaction date range for this fictitious dataset is 2024-01-01 to 2024-04-30
+--- NOTE: transaction date range for this fictitious dataset is 2024-01-01 to 2024-04-30
 
 SELECT 
 	c.customer_id,
@@ -98,6 +102,7 @@ HAVING
     OR MAX(t.transaction_date) IS NULL
 ORDER BY 
 	last_purchase_date;
+
 
 -- Q6. What is the total revenue by loyalty tier per month?
 
@@ -126,6 +131,7 @@ GROUP BY
     tx.transaction_month
 ORDER BY
 	tx.transaction_month ASC;
+
 
 -- Q7. What is the ratio of one-time to repeat purchase customers?
 
